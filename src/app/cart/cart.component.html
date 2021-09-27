@@ -1,0 +1,48 @@
+<mat-form-field appearance="legacy" style="margin-left: 10px; margin-right: 10px;">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter" />
+</mat-form-field>
+
+
+<table mat-table [dataSource]="listData" matSort class="mat-elevation-z8" style="overflow: auto;">
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <ng-container matColumnDef="id">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let cart">{{cart.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="BookName">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Book Name</th>
+        <td mat-cell *matCellDef="let cart">{{cart.book.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Quantity">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Quantity</th>
+        <td mat-cell *matCellDef="let cart">{{cart.quantity}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Price">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Price</th>
+        <td mat-cell *matCellDef="let cart">{{cart.book.price}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="SumTotal">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Sum Total</th>
+        <td mat-cell *matCellDef="let cart">{{cart.book.price * cart.quantity}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Options">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Options</th>
+        <td mat-cell *matCellDef="let cart">
+            <button mat-icon-button (click)="Order(cart.book.id, cart.quantity, cart.id)" color="primary">
+                <mat-icon>point_of_sale</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteCartEntry(cart.id)" color="warn">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+
+</table>

@@ -1,0 +1,60 @@
+<mat-form-field appearance="legacy" style="margin-left: 10px; margin-right: 10px;">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter" />
+</mat-form-field>
+
+<table mat-table [dataSource]="listData" matSort class="mat-elevation-z8" style="overflow: auto;">
+   
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Id</th>
+        <td mat-cell *matCellDef="let book">{{book.id}}</td>
+    </ng-container>
+    
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let book"> {{book.name}} </td>
+    </ng-container>
+
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Price</th>
+        <td mat-cell *matCellDef="let book"> {{book.price}} </td>
+    </ng-container>
+
+    <!-- Category Column -->
+    <ng-container matColumnDef="category">
+        <th mat-cell-header *matHeaderCellDef mat-sort-header>Category</th>
+        <td mat-cell *matCellDef="let book"> {{book.category}} </td>
+    </ng-container>
+
+    <!-- Author Column -->
+    <ng-container matColumnDef="author">
+        <th mat-cell-header *matHeaderCellDef>Author</th>
+        <td mat-cell *matCellDef="let book"> {{book.author}} </td>
+    </ng-container>
+
+    <!-- Author Column -->
+    <ng-container matColumnDef="Options">
+        <th mat-cell-header *matHeaderCellDef>Options</th>
+        <td mat-cell *matCellDef="let book">
+            <button mat-icon-button color="primary" (click)="showIndividualBook(book)">
+                <mat-icon>launch</mat-icon>
+            </button>
+            <button mat-icon-button (click)="addToCart(book.id)">
+                <mat-icon>add_shopping_cart</mat-icon>
+            </button>
+            <button mat-icon-button (click)="addToOrder(book.id)" color="accent">
+                <mat-icon>point_of_sale</mat-icon>
+            </button>
+        </td>
+    </ng-container>
+</table>
+
+
+
+
+

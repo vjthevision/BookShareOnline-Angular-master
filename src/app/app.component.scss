@@ -1,0 +1,49 @@
+.nav1 {
+    .logo {
+        width: 40px;
+        margin: 16px;
+        color: red;
+    }
+    button{
+        margin-right: 4px;
+    }
+    .ApplicationName {
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    .spacer {
+        flex: 1;
+    }
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    padding-top: 3px;
+}
+
+.nav2{
+    .spacer {
+        flex: 1;
+    }
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color:beige;
+    color: white;
+    font-weight: 600;
+    padding-top: 10px;
+    button{
+        margin-right: 4px;
+    }
+}
+footer {
+    margin-top: 8px;
+    display: flex;
+    line-height: 20px;
+    position: absolute;
+    bottom: 0px;
+    background-color:#5976d2;
+    width: 100%;
+}
