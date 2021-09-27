@@ -10,9 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './authenticate/login/login.component';
 import { RegisterComponent } from './authenticate/register/register.component';
-
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
@@ -59,6 +58,7 @@ import { ShowOrderComponent } from './order/show-order/show-order.component';
     MatSnackBarModule,
     MatSortModule,
     MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [AuthenticateService, 
     {

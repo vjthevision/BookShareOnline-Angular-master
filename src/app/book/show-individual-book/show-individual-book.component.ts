@@ -18,10 +18,15 @@ export class ShowIndividualBookComponent implements OnInit {
     public cartService: CartService,
     public orderService: OrderService
   ) {}
-
-  ngOnInit(): void {}
+    photoFilePath = this.service.PhotoUrl+"download.png";
+    // photoFilePath = this.service.PhotoUrl+this.service.formData.photoFileName;
+    
+  ngOnInit(): void {
+    this.photoFilePath = this.service.PhotoUrl+this.service.formData.photoFileName;
+  }
   onClose() {
     this.dialogbox.close();
+    
   }
   quantity = 1;
   addToCart(quantity: any) {

@@ -5,4 +5,6 @@ export class BookModel{
     author?= new String();
     details?= new String();
     seller?= new String();
+    photoFileName? = new String();
+  
 }

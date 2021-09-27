@@ -11,7 +11,7 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   readonly APIUrl = "https://localhost:44343/api";
-
+  readonly PhotoUrl = "https://localhost:44390/Photos/";
   formData = new BookModel();
   bookid= 0
   addBook() {
@@ -21,5 +21,7 @@ export class BookService {
   getBooks(){
     return this.http.get<any[]>(this.APIUrl + "/books");
   }
-
+  UploadPhoto(val:any){
+    return this.http.post(this.APIUrl+'/Books/SaveFile',val);
+  }
 }
